@@ -1,0 +1,10 @@
+groups:
+- name: docker
+  rules:
+  - alert: HighCpuUsage
+    expr: avg(rate(container_cpu_usage_seconds_total[1m])) by (container_name) > 0.9
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: "CPU usage is above 90% for container {{ $labels.container_name }}"

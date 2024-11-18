@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  web:
+    image: nginx:latest
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost"]
+      interval: 30s
+      retries: 3

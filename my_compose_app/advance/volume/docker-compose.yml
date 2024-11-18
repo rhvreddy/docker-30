@@ -1,0 +1,10 @@
+services:
+  redis:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    networks:
+      - backend
+
+volumes:
+  redis-data:

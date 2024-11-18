@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "${WEB_PORT_BASE}:${WEB_PORT}"  # Use dynamic WEB_PORT for each instance
+    volumes:
+      - ./html:/usr/share/nginx/html
+    environment:
+      - WEB_PORT=${WEB_PORT_BASE}  # Pass the base port to each instance
+    depends_on:
+      - redis
+    scale: 3  # Scale the service to 3 replicas
+
+  redis:
+    image: redis:latest
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - backend
+
+networks:
+  backend:
