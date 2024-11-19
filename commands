@@ -1,0 +1,201 @@
+Day 1: Introduction to Docker
+Commands:
+
+docker version
+docker info
+docker --help
+Keywords:
+
+Container, Image, Docker CLI, Docker Daemon.
+Day 2: Installing Docker
+Commands:
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+docker run hello-world
+docker-compose --version
+Keywords:
+
+Docker Compose, Docker Desktop, Linux Package Manager.
+Day 3: Docker Images and Containers
+Commands:
+
+docker pull <image_name>
+docker images
+docker run <image_name>
+docker ps
+docker ps -a
+docker stop <container_id>
+docker rm <container_id>
+Keywords:
+
+Docker Hub, Running a container, Stopping/Removing containers.
+Day 4: Working with Docker Images
+Commands:
+
+docker inspect <image_name>
+docker tag <source_image> <new_image>
+docker rmi <image_id>
+docker history <image_name>
+Keywords:
+
+Image Layers, Tags, Inspecting Images.
+Day 5: Creating Custom Docker Images
+Commands:
+
+docker build -t <image_name> .
+dockerfile
+Dockerfile Keywords:
+
+FROM, RUN, CMD, COPY, WORKDIR.
+Day 6: Docker Volumes
+Commands:
+
+docker volume create <volume_name>
+docker volume ls
+docker volume inspect <volume_name>
+docker run -v <volume_name>:<container_path> <image_name>
+docker volume rm <volume_name>
+Keywords:
+
+Persistent Storage, Bind Mounts.
+Day 7: Docker Networking Basics
+Commands:
+
+docker network ls
+docker network create <network_name>
+docker network inspect <network_name>
+docker network connect <network_name> <container_name>
+docker network disconnect <network_name> <container_name>
+Keywords:
+
+Bridge Network, Host Network, Overlay Network.
+Day 8: Multi-Container Applications
+Commands:
+
+docker-compose up
+docker-compose down
+docker-compose ps
+Docker Compose File Keywords:
+
+services, volumes, networks, depends_on.
+Day 9: Debugging Docker Containers
+Commands:
+
+docker logs <container_id>
+docker exec -it <container_id> bash
+docker inspect <container_id>
+docker stats
+Keywords:
+
+Container Logs, Performance Stats.
+Day 10: Dockerizing Applications
+Commands:
+
+COPY, RUN, CMD (in Dockerfile).
+docker build -t <image_name> .
+docker run <image_name>
+Keywords:
+
+Application Dockerization, Multi-Stage Builds.
+Day 11: Dockerizing a Python Application
+Commands:
+
+pip install -r requirements.txt
+docker build -t python-app .
+docker run python-app
+Dockerfile Keywords:
+
+FROM python, RUN pip install, EXPOSE.
+Day 12: Dockerizing a Node.js Application
+Commands:
+
+npm install
+docker build -t node-app .
+docker run -p 3000:3000 node-app
+Dockerfile Keywords:
+
+FROM node, RUN npm install, WORKDIR.
+Day 13: Docker Security Basics
+Commands:
+
+docker scan <image_name>
+docker run --cap-drop ALL
+Keywords:
+
+Image Scanning, Limiting Capabilities, Docker Bench for Security.
+Day 14: Docker Compose Advanced
+Commands:
+
+docker-compose logs
+docker-compose scale <service>=<replicas>
+docker-compose config
+Keywords:
+
+Scaling Services, Dependencies, Load Balancing.
+Day 15: Docker Swarm Basics
+Commands:
+
+docker swarm init
+docker swarm join
+docker node ls
+Keywords:
+
+Swarm, Manager Node, Worker Node.
+Day 16: Deploying Applications with Swarm
+Commands:
+
+docker service create
+docker service ls
+docker service scale
+Keywords:
+
+Services, Replicas, Scaling.
+Day 17: Scaling in Swarm
+Commands:
+
+docker service scale <service_name>=<replicas>
+docker node promote
+docker node demote
+Keywords:
+
+Swarm Scaling, Node Roles.
+Day 18: Rolling Updates in Swarm
+Commands:
+
+docker service update
+docker service rollback
+Keywords:
+
+Rolling Updates, Rollbacks.
+Day 19: Swarm Secrets and Configurations
+Commands:
+
+docker secret create
+docker config create
+docker service create --secret
+Keywords:
+
+Secrets Management, ConfigMaps.
+Day 20: Transitioning to Kubernetes
+Commands:
+
+kubectl get nodes
+kubectl apply -f <manifest.yaml>
+Keywords:
+
+Kubernetes Pods, Deployments, Services.
+Day 21-30: Advanced Docker and Kubernetes
+(Key Commands Across Topics):
+
+CI/CD:
+docker build
+docker push
+kubectl apply
+kubectl set image
+Advanced Networking:
+docker network create
+docker-compose networks
+Monitoring:
+docker stats
+Tools: Prometheus, Grafana.
